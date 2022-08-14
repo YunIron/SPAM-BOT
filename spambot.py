@@ -11,14 +11,14 @@ class spambot:
             self.text = str(input("Istediginiz yaziyi yazin sonra nereye yazmak istiyorsaniz oraya tiklayiniz:    "))
             self.count = int(input("Miktar: "))
             self.hiz = float(input("Ne kadar surede atsin?: "))
-            self.secim = str(input("Baslatilsin mi?(E/H):    "))
+            self.secim = str(input("Baslatilsin mi?(E/H):    ")).lower()
             self.menu(self.text, self.count, self.secim)
         except Exception:
             print('Yanlis deger!')
-            secim = str(input(f"{red}[ - ]Yeniden baslatilsin mi ? ya da kapatilsin mi? {yellow}(Y = Yeniden Baslat, K = Kapat):\t\t"))
-            if secim == "y" or secim == "Y":
+            secim = str(input(f"{red}[ - ]Yeniden baslatilsin mi ? ya da kapatilsin mi? {yellow}(Y = Yeniden Baslat, K = Kapat):\t\t")).lower()
+            if secim == "y":
                 spambot()
-            elif secim == "k" or secim == "K":
+            elif secim == "k":
                 exit()
             else:
                 print("Yanlis Deger!")
@@ -26,7 +26,7 @@ class spambot:
 
     def menu(self, text, count, secim):
         try:
-            if self.secim == "e" or self.secim == "E":
+            if self.secim == "e":
                 sure = 5
                 for x in range(5):
                     print(f"{cyan}",sure)
